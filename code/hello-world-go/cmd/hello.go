@@ -21,4 +21,5 @@ func main() {
 		return
 	}
 	fmt.Printf("%v\n", magic)
+	internal.PrintHello()
 }
