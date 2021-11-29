@@ -2,12 +2,14 @@ version: "3.9"
 services:
   prometheus:
     image: prom/prometheus
+    restart: always 
     ports:
       - 9090:9090
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
   deconz-exporter:
     image: solsson/prometheus-deconz-exporter
+    restart: always 
     ports:
       - 8080:8080
     command:
@@ -15,5 +17,6 @@ services:
       - --key=${DECONZ_API_KEY}
   grafana:
     image: grafana/grafana
+    restart: always 
     ports:
       - 3000:3000
