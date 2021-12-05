@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kartserver-socket-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: kartserver-socket
+  template:
+    metadata:
+      labels:
+        app: kartserver-socket
+    spec:
+      containers:
+        - name: kartserver-socket-container
+          image: hakonamdal/kartserver-socket
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: 1000m
+            requests:
+              cpu: 500m

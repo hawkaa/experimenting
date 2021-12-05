@@ -13,7 +13,7 @@ services:
     ports:
       - 8080:8080
     command:
-      - --host=100.116.242.20
+      - --host=${DECONZ_HOST}
       - --key=${DECONZ_API_KEY}
   grafana:
     image: grafana/grafana

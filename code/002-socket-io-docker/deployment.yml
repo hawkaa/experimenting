@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micado-socket-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: micado-socket
+  template:
+    metadata:
+      labels:
+        app: micado-socket
+    spec:
+      containers:
+        - name: micado-socket-container
+          image: hakonamdal/micado-socket
+          ports:
+            - containerPort: 3000

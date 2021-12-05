@@ -21,8 +21,8 @@ services:
     ports:
       - 8080:8080
     environment:
-      - DECONZ_URL=
-      - DECONZ_API_KEY=
+      - DECONZ_URL=...
+      - DECONZ_API_KEY=...
 volumes:
   prometheus:
   grafana:
